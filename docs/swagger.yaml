@@ -1,0 +1,628 @@
+basePath: /api/v1
+definitions:
+  dtos.CreateUser:
+    properties:
+      claims:
+        items:
+          $ref: '#/definitions/models.Claims'
+        type: array
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  dtos.RefreshToken:
+    properties:
+      refreshToken:
+        type: string
+    type: object
+  dtos.RequestUpdatePassword:
+    properties:
+      email:
+        type: string
+    type: object
+  dtos.SignIn:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  dtos.SignUp:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      passwordConfirm:
+        type: string
+    type: object
+  dtos.UpdateClaims:
+    properties:
+      claims:
+        items:
+          $ref: '#/definitions/models.Claims'
+        type: array
+      id:
+        type: string
+      version:
+        type: integer
+    type: object
+  dtos.UpdateEmail:
+    properties:
+      email:
+        type: string
+      id:
+        type: string
+      version:
+        type: integer
+    type: object
+  dtos.UpdatePassword:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      passwordConfirm:
+        type: string
+      requestUpdatePasswordCode:
+        type: string
+    type: object
+  dtos.User:
+    properties:
+      claims:
+        items:
+          $ref: '#/definitions/models.Claims'
+        type: array
+      created_at:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      updated_at:
+        type: string
+      version:
+        type: integer
+    type: object
+  dtos.UserCredentials:
+    properties:
+      claims:
+        items:
+          $ref: '#/definitions/models.Claims'
+        type: array
+      email:
+        type: string
+      id:
+        type: string
+      version:
+        type: integer
+    type: object
+  http.ResponseCredentials:
+    properties:
+      accessToken:
+        type: string
+      refreshToken:
+        type: string
+      user:
+        $ref: '#/definitions/dtos.UserCredentials'
+    type: object
+  httputil.ResponseError:
+    properties:
+      error:
+        items: {}
+        type: array
+      status:
+        type: integer
+    type: object
+  models.Claims:
+    properties:
+      type:
+        type: string
+      value:
+        type: string
+    type: object
+  models.PublicKeysParams:
+    properties:
+      alg:
+        type: string
+      expires_at:
+        type: string
+      kid:
+        type: string
+      params:
+        additionalProperties:
+          type: string
+        type: object
+      use:
+        type: string
+    type: object
+info:
+  contact:
+    email: support@microservices.go
+    name: API Support
+    url: http://www.microservices.go/support
+  description: This is a authentication server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Microservices Go
+  version: "1.0"
+paths:
+  /{email}/{page}/{size}:
+    get:
+      consumes:
+      - application/json
+      description: Get users with claim
+      parameters:
+      - description: Email
+        in: path
+        name: email
+        type: string
+      - description: Page
+        in: path
+        name: page
+        required: true
+        type: integer
+      - description: Size
+        in: path
+        name: size
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dtos.User'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Get users with claim
+      tags:
+      - users
+  /{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete by user ID
+      parameters:
+      - description: user ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Delete an user
+      tags:
+      - users
+  /claims/{id}:
+    put:
+      consumes:
+      - application/json
+      description: update by json user claims
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Update user claims
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.UpdateClaims'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Update an user claims
+      tags:
+      - users
+  /download/cert-key/{password}:
+    get:
+      consumes:
+      - application/json
+      description: get an key cert
+      parameters:
+      - description: Password permission
+        in: path
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Return key cert
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request an key cert
+      tags:
+      - security
+  /download/cert/{password}:
+    get:
+      consumes:
+      - application/json
+      description: get an certificate
+      parameters:
+      - description: Password permission
+        in: path
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Return certificate
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request an certificate
+      tags:
+      - security
+  /download/public-key-jwt:
+    get:
+      consumes:
+      - application/json
+      description: get an public key JWT
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Return public key JWT
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request an public key JWT
+      tags:
+      - security
+  /email/{id}:
+    put:
+      consumes:
+      - application/json
+      description: update by json user email
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Update user email
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.UpdateEmail'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Update an user email
+      tags:
+      - users
+  /jwks:
+    get:
+      consumes:
+      - application/json
+      description: get JWKs
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.PublicKeysParams'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request JWKS
+      tags:
+      - security
+  /password/{email}:
+    put:
+      consumes:
+      - application/json
+      description: update by json user password
+      parameters:
+      - description: User Email
+        in: path
+        name: email
+        required: true
+        type: string
+      - description: Update user password
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.UpdatePassword'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Update an user password
+      tags:
+      - users
+  /profile:
+    get:
+      consumes:
+      - application/json
+      description: get user info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dtos.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Profile user
+      tags:
+      - users
+  /refresh-token:
+    post:
+      consumes:
+      - application/json
+      description: request credentials by json refresh token
+      parameters:
+      - description: Refresh token user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.RefreshToken'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request a user credentials
+      tags:
+      - users
+  /request-update-password:
+    post:
+      consumes:
+      - application/json
+      description: update by json user password
+      parameters:
+      - description: Update user password
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.RequestUpdatePassword'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Request a user password update
+      tags:
+      - users
+  /signin:
+    post:
+      consumes:
+      - application/json
+      description: get by json user token refreshToken
+      parameters:
+      - description: Get credentials
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.SignIn'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Signin user
+      tags:
+      - users
+  /signup:
+    post:
+      consumes:
+      - application/json
+      description: add by json user
+      parameters:
+      - description: Add user and get credentials
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.SignUp'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/http.ResponseCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      summary: Signup user
+      tags:
+      - users
+  /user:
+    post:
+      consumes:
+      - application/json
+      description: create by json user
+      parameters:
+      - description: Create user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dtos.UserCredentials'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/httputil.ResponseError'
+      security:
+      - Bearer: []
+      summary: Create user
+      tags:
+      - users
+schemes:
+- https
+securityDefinitions:
+  Bearer:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

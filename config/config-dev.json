@@ -1,0 +1,74 @@
+{
+  "apiVersion": "v1",
+  "appName": "authentication",
+  "secondsToReloadServicesName": 15,
+  "certificates": {
+    "foldername": "certs",
+    "filenamecert": "localhost.crt",
+    "filenamekey": "localhost.key",
+    "hashPermissionEndPoint": "$2a$04$cYtz43rIlNZwAUwZWw4zSOSO7Tpk7VvZL4g/XWOMf9duUgoWgyjKC",
+    "passwordPermissionEndPoint": "6L8awtp6@wi0QeD@*xym",
+    "minutesToReloadCertificate": 1
+  },  
+  "jaeger": {
+    "jaegerEndpoint": "http://localhost:14268/api/traces",
+    "serviceName": "authentication",
+    "serviceVersion": "1.0.0"
+  },
+  "listenPort": ":5100",
+  "folders": [
+    "certs",
+    "keys"
+  ],
+  "mongoDbExporter": {
+    "user": "mongodb_exporter",
+    "password": "mongodb"
+  },
+  "mongodb": {
+    "database": "authentications",
+    "host": "localhost",
+    "user": "mongo",
+    "password": "mongo",
+    "maxPoolSize": 50,
+    "port": "27017"
+  },
+  "nats": {
+    "clientId": "authentication",
+    "clusterId": "microservice",
+    "connectWait": 30,
+    "interval": 10,
+    "maxOut": 5,
+    "pubAckWait": 30,
+    "url": "nats://localhost:4222"
+  },
+  "prometheus": {
+    "prometheus_pushgateway": "http://localhost:9091/"
+  },
+  "securityKeys": {
+    "daysToExpireKeys": 90,
+    "fileECPPublicKey": "keys/ec256-public.pem",
+    "minutesToRefreshPrivateKeys": 15,
+    "savePublicKeyToFile": true,
+    "endPointGetPublicKeys": "https://localhost:5001/api/v1/jwks"
+  },
+  "token": {
+    "hoursToExpireRefreshToken": 1,
+    "issuer": "www.mymicroservices.com",
+    "minutesToExpireToken": 15
+  },
+  "emailService": {
+    "serviceName":"email"
+  },
+  "company": {
+    "name": "mymicroservices",
+    "address": "endereco",
+    "addressNumber": "numero",
+    "addressComplement": "complemento",
+    "country": "Brazil",
+    "locality": "Sampa",
+    "postalCode": "11000000"
+  },
+  "consul": {
+    "host": "localhost:8500"
+  }
+}

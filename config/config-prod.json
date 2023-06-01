@@ -1,0 +1,64 @@
+{
+  "apiVersion": "v1",
+  "appName": "authentication",
+  "listenPort": ":5100",
+  "kubernetesServiceNameSuffix": "svc",
+  "secondsToReloadServicesName": 15,
+  "folders": [
+    "certs",
+    "keys"
+  ],
+  "mongodb": {
+    "host": "mongodb-server-svc",
+    "port": "27017",
+    "database": "authentications",
+    "maxPoolSize": 50
+  },
+  "certificates": {
+    "foldername": "certs",
+    "filenamecert": "localhost.crt",
+    "filenamekey": "localhost.key",
+    "minutesToReloadCertificate": 1
+  },
+  "token": {
+    "issuer": "www.mymicroservices.com",
+    "minutesToExpireToken": 15,
+    "hoursToExpireRefreshToken": 1
+  },
+  "securityKeys": {
+    "daysToExpireKeys": 90,
+    "minutesToRefreshPrivateKeys": 15,
+    "savePublicKeyToFile": true,
+    "fileECPPublicKey": "keys/ec256-public.pem",
+    "endPointGetPublicKeys": "https://localhost:5001/api/v1/jwks"
+  },
+  "nats": {
+    "url": "nats://nats-streaming-svc:4222",
+    "clusterId": "microservice",
+    "clientId": "authentication",
+    "connectWait": 30,
+    "pubAckWait": 30,
+    "interval": 10,
+    "maxOut": 5
+  },
+  "jaeger": {
+    "jaegerEndpoint": "http://jaeger-collector-svc:14268/api/traces",
+    "serviceName": "authentication",
+    "serviceVersion": "1.0.0"
+  },
+  "emailService": {
+    "serviceName":"email"
+  },
+  "company": {
+    "name": "mymicroservices",
+    "address": "endereco",
+    "addressNumber": "numero",
+    "addressComplement": "complemento",
+    "country": "Brazil",
+    "locality": "Sampa",
+    "postalCode": "11000000"
+  },
+  "consul": {
+    "host": "consul-svc:8500"
+  }
+}
