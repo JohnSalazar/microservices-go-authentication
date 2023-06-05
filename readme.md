@@ -41,6 +41,7 @@
 - Mongo
 - Prometheus
 - Otel
+- Jaeger
 - Consul
 - Nats
 - Swagger UI with JWT support
