@@ -82,7 +82,7 @@
 - **Authentication**
 - [Email](https://github.com/JohnSalazar/microservices-go-email)
 - [Customer](https://github.com/JohnSalazar/microservices-go-customer)
-- Product
+- [Product](https://github.com/JohnSalazar/microservices-go-product)
 - [Cart](https://github.com/JohnSalazar/microservices-go-cart)
 - [Order](https://github.com/JohnSalazar/microservices-go-order)
 - [Payment](https://github.com/JohnSalazar/microservices-go-payment)
