@@ -3,61 +3,91 @@
 ## Languages
 
 - Golang
-  
-- Implementations
-  - Self-signed Certificates
-  - API Documentation
-  - JWT with Public/Private Key Rotation
-  - Refresh Token
-  - Rest
-  - GRPC
-  - Events
-  - Background Services
-  - Discovery Service
-  - Telemetry
-  - Metrics  
 
-- Testing
-  - Unit and Integration
-  - Coverage
+---
 
-- Components
-  - Viper
-  - UUID  
-  - Validator  
-  - Gin
-  - Breaker
-  - Retrier
-  - Cryptography
-  - Mongo
-  - Prometheus
-  - Otel
-  - Consul
-  - Nats
-  - Swagger UI with JWT support
+## Implementations
 
-- Hosting
-  - NGINX
-  - Docker
-  - Kubernetes
+- Self-signed Certificates
+- API Documentation
+- JWT with Public/Private Key Rotation
+- Refresh Token
+- Rest
+- GRPC
+- Events
+- Background Services
+- Discovery Service
+- Telemetry
+- Metrics  
+
+---
+
+## Testing
+
+- Unit and Integration
+- Coverage
+
+---
+
+## Components
+
+- Viper
+- UUID  
+- Validator  
+- Gin
+- Breaker
+- Retrier
+- Cryptography
+- Mongo
+- Prometheus
+- Otel
+- Consul
+- Nats
+- Swagger UI with JWT support
+
+---
+
+## Hosting
+
+- NGINX
+- Docker
+- Kubernetes
+
+---
 
 ## Architecture
 
-- Hexagonal Architecture
-
+- Ports and Adapters (Hexagonal Architecture)
 - Clean Code
 - Retry Pattern
 - Circuit Breaker
 - Repository
 - Api Gateway / Reverse Proxy
 
----
+###
 
 ## Architecture Overview
 
 <p align="center">
     <img alt="architecture overview" src="https://github.com/JohnSalazar/microservices-go-authentication/assets/16736914/c4c0aac9-8e2c-4d69-993e-fe72218ee75d" />
 </p>
+
+---
+
+## List of Services
+
+### This service is part 1/8 of the e-commerce application
+
+- **Authentication**
+- Email
+- Customers
+- Products
+- Cards
+- Orders
+- Payments
+- Web
+
+---
 
 ## About
 
