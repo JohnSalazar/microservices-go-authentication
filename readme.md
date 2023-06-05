@@ -80,11 +80,11 @@
 
 - **Authentication**
 - Email
-- Customers
-- Products
-- Cards
-- Orders
-- Payments
+- Customer
+- Product
+- Cart
+- Order
+- Payment
 - Web
 
 ---
