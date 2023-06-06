@@ -86,7 +86,7 @@
 - [Cart](https://github.com/JohnSalazar/microservices-go-cart)
 - [Order](https://github.com/JohnSalazar/microservices-go-order)
 - [Payment](https://github.com/JohnSalazar/microservices-go-payment)
-- Web
+- [Web](https://github.com/JohnSalazar/microservices-go-web)
 
 ---
 
