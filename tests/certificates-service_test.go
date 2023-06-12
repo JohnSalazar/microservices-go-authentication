@@ -7,7 +7,7 @@ import (
 	"crypto/x509"
 	"testing"
 
-	"github.com/oceano-dev/microservices-go-common/helpers"
+	"github.com/JohnSalazar/microservices-go-common/helpers"
 	"github.com/stretchr/testify/assert"
 )
 

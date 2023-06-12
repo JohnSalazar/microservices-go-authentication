@@ -15,10 +15,10 @@ import (
 
 	httpresponsecredentials "authentication/src/http"
 
+	"github.com/JohnSalazar/microservices-go-common/helpers"
+	"github.com/JohnSalazar/microservices-go-common/httputil"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 	"github.com/gin-gonic/gin"
-	"github.com/oceano-dev/microservices-go-common/helpers"
-	"github.com/oceano-dev/microservices-go-common/httputil"
-	common_models "github.com/oceano-dev/microservices-go-common/models"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -16,11 +16,11 @@ import (
 	"authentication/src/models"
 	"authentication/src/services"
 
-	trace "github.com/oceano-dev/microservices-go-common/trace/otel"
+	trace "github.com/JohnSalazar/microservices-go-common/trace/otel"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	common_models "github.com/oceano-dev/microservices-go-common/models"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 
 	"github.com/lestrrat-go/jwx/jwk"
 )

@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	common_models "github.com/oceano-dev/microservices-go-common/models"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 )
 
 func NewResponseUser(c *gin.Context, statusCode int, user *models.User) {

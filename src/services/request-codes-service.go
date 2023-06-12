@@ -8,7 +8,7 @@ import (
 	"log"
 	"math/rand"
 
-	common_services "github.com/oceano-dev/microservices-go-common/services"
+	common_services "github.com/JohnSalazar/microservices-go-common/services"
 )
 
 type RequestCodeService struct {

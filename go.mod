@@ -97,6 +97,7 @@ require (
 )
 
 require (
+	github.com/JohnSalazar/microservices-go-common v0.0.0-20230612135818-acdb75f09cf2
 	github.com/gin-contrib/location v0.0.2
 	github.com/gin-gonic/gin v1.8.2
 	github.com/golang-jwt/jwt/v4 v4.4.1
@@ -104,7 +105,6 @@ require (
 	github.com/hashicorp/consul/api v1.20.0
 	github.com/lestrrat-go/jwx v1.2.23
 	github.com/nats-io/nats.go v1.13.1-0.20220308171302-2f2f6968e98d
-	github.com/oceano-dev/microservices-go-common v1.0.1-0.20230530133617-471e5cc99e77
 	github.com/prometheus/client_golang v1.14.0
 	github.com/sirupsen/logrus v1.9.0
 	github.com/stretchr/testify v1.8.2

@@ -5,7 +5,7 @@ import (
 
 	"authentication/src/models"
 
-	common_models "github.com/oceano-dev/microservices-go-common/models"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 )
 
 type ManagerSecurityKeys interface {

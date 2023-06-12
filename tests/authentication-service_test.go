@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	common_models "github.com/oceano-dev/microservices-go-common/models"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 )
 
 func TestCreate(t *testing.T) {

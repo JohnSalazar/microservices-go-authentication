@@ -1,6 +1,6 @@
 package dtos
 
-import common_models "github.com/oceano-dev/microservices-go-common/models"
+import common_models "github.com/JohnSalazar/microservices-go-common/models"
 
 type UpdateClaims struct {
 	ID      string                 `json:"id"`

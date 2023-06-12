@@ -9,8 +9,8 @@ import (
 	"authentication/src/models"
 	"authentication/src/security"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	common_models "github.com/oceano-dev/microservices-go-common/models"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
 	"github.com/gin-gonic/gin"

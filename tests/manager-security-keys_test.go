@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/oceano-dev/microservices-go-common/helpers"
+	"github.com/JohnSalazar/microservices-go-common/helpers"
 	"github.com/stretchr/testify/assert"
 )
 

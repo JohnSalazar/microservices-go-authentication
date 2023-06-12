@@ -3,7 +3,7 @@ package mocks
 import (
 	"errors"
 
-	common_services "github.com/oceano-dev/microservices-go-common/services"
+	common_services "github.com/JohnSalazar/microservices-go-common/services"
 )
 
 type EmailServiceMock struct {

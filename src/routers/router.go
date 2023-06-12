@@ -5,9 +5,9 @@ import (
 
 	"authentication/src/controllers"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	"github.com/oceano-dev/microservices-go-common/middlewares"
-	common_service "github.com/oceano-dev/microservices-go-common/services"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	"github.com/JohnSalazar/microservices-go-common/middlewares"
+	common_service "github.com/JohnSalazar/microservices-go-common/services"
 
 	"github.com/gin-contrib/location"
 	"github.com/gin-gonic/gin"

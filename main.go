@@ -6,21 +6,21 @@ import (
 	"encoding/json"
 	"fmt"
 
-	common_grpc_client "github.com/oceano-dev/microservices-go-common/grpc/email/client"
-	"github.com/oceano-dev/microservices-go-common/httputil"
-	"github.com/oceano-dev/microservices-go-common/middlewares"
+	common_grpc_client "github.com/JohnSalazar/microservices-go-common/grpc/email/client"
+	"github.com/JohnSalazar/microservices-go-common/httputil"
+	"github.com/JohnSalazar/microservices-go-common/middlewares"
 
-	"github.com/oceano-dev/microservices-go-common/helpers"
-	common_log "github.com/oceano-dev/microservices-go-common/logs"
-	common_nats "github.com/oceano-dev/microservices-go-common/nats"
-	provider "github.com/oceano-dev/microservices-go-common/trace/otel/jaeger"
+	"github.com/JohnSalazar/microservices-go-common/helpers"
+	common_log "github.com/JohnSalazar/microservices-go-common/logs"
+	common_nats "github.com/JohnSalazar/microservices-go-common/nats"
+	provider "github.com/JohnSalazar/microservices-go-common/trace/otel/jaeger"
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	common_repositories "github.com/oceano-dev/microservices-go-common/repositories"
-	common_security "github.com/oceano-dev/microservices-go-common/security"
-	common_services "github.com/oceano-dev/microservices-go-common/services"
-	common_tasks "github.com/oceano-dev/microservices-go-common/tasks"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	common_repositories "github.com/JohnSalazar/microservices-go-common/repositories"
+	common_security "github.com/JohnSalazar/microservices-go-common/security"
+	common_services "github.com/JohnSalazar/microservices-go-common/services"
+	common_tasks "github.com/JohnSalazar/microservices-go-common/tasks"
 
 	"authentication/src/repositories"
 	"authentication/src/routers"
@@ -40,9 +40,9 @@ import (
 
 	_ "authentication/docs"
 
+	common_consul "github.com/JohnSalazar/microservices-go-common/consul"
+	common_validator "github.com/JohnSalazar/microservices-go-common/validators"
 	consul "github.com/hashicorp/consul/api"
-	common_consul "github.com/oceano-dev/microservices-go-common/consul"
-	common_validator "github.com/oceano-dev/microservices-go-common/validators"
 )
 
 // var emailService *common_grpc_client.EmailServiceClientGrpc

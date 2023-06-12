@@ -18,7 +18,7 @@
 - Background Services
 - Discovery Service
 - Telemetry
-- Metrics  
+- Metrics
 
 ---
 
@@ -32,8 +32,8 @@
 ## Components
 
 - Viper
-- UUID  
-- Validator  
+- UUID
+- Validator
 - Gin
 - Breaker
 - Retrier

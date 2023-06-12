@@ -13,16 +13,16 @@ import (
 	"authentication/src/services"
 	"authentication/tests/mocks"
 
+	"github.com/JohnSalazar/microservices-go-common/config"
+	common_log "github.com/JohnSalazar/microservices-go-common/logs"
+	"github.com/JohnSalazar/microservices-go-common/middlewares"
+	common_nats "github.com/JohnSalazar/microservices-go-common/nats"
+	common_security "github.com/JohnSalazar/microservices-go-common/security"
+	common_services "github.com/JohnSalazar/microservices-go-common/services"
+	"github.com/JohnSalazar/microservices-go-common/tasks"
+	common_validator "github.com/JohnSalazar/microservices-go-common/validators"
 	"github.com/gin-gonic/gin"
 	"github.com/nats-io/nats.go"
-	"github.com/oceano-dev/microservices-go-common/config"
-	common_log "github.com/oceano-dev/microservices-go-common/logs"
-	"github.com/oceano-dev/microservices-go-common/middlewares"
-	common_nats "github.com/oceano-dev/microservices-go-common/nats"
-	common_security "github.com/oceano-dev/microservices-go-common/security"
-	common_services "github.com/oceano-dev/microservices-go-common/services"
-	"github.com/oceano-dev/microservices-go-common/tasks"
-	common_validator "github.com/oceano-dev/microservices-go-common/validators"
 )
 
 var (

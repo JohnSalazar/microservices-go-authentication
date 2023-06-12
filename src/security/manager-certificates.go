@@ -7,9 +7,9 @@ import (
 
 	"authentication/src/services"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	"github.com/oceano-dev/microservices-go-common/helpers"
-	common_service "github.com/oceano-dev/microservices-go-common/services"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	"github.com/JohnSalazar/microservices-go-common/helpers"
+	common_service "github.com/JohnSalazar/microservices-go-common/services"
 )
 
 type managerCertificates struct {

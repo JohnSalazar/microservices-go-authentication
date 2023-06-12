@@ -1,7 +1,7 @@
 package nats
 
 import (
-	"github.com/oceano-dev/microservices-go-common/config"
+	"github.com/JohnSalazar/microservices-go-common/config"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 )

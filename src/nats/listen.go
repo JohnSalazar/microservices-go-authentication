@@ -4,8 +4,8 @@ import (
 	"authentication/src/nats/listeners"
 	"log"
 
+	common_nats "github.com/JohnSalazar/microservices-go-common/nats"
 	"github.com/nats-io/nats.go"
-	common_nats "github.com/oceano-dev/microservices-go-common/nats"
 )
 
 type listen struct {

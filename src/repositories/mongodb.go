@@ -3,7 +3,7 @@ package repositories
 import (
 	"fmt"
 
-	"github.com/oceano-dev/microservices-go-common/config"
+	"github.com/JohnSalazar/microservices-go-common/config"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

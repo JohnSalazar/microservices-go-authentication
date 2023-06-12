@@ -12,17 +12,17 @@ import (
 	"authentication/src/dtos"
 	natsMetrics "authentication/src/nats/interfaces"
 
-	"github.com/oceano-dev/microservices-go-common/httputil"
-	trace "github.com/oceano-dev/microservices-go-common/trace/otel"
+	"github.com/JohnSalazar/microservices-go-common/httputil"
+	trace "github.com/JohnSalazar/microservices-go-common/trace/otel"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 
-	"github.com/oceano-dev/microservices-go-common/config"
-	common_nats "github.com/oceano-dev/microservices-go-common/nats"
+	"github.com/JohnSalazar/microservices-go-common/config"
+	common_nats "github.com/JohnSalazar/microservices-go-common/nats"
 
-	helpers "github.com/oceano-dev/microservices-go-common/helpers"
-	common_models "github.com/oceano-dev/microservices-go-common/models"
-	common_security "github.com/oceano-dev/microservices-go-common/security"
-	common_services "github.com/oceano-dev/microservices-go-common/services"
+	helpers "github.com/JohnSalazar/microservices-go-common/helpers"
+	common_models "github.com/JohnSalazar/microservices-go-common/models"
+	common_security "github.com/JohnSalazar/microservices-go-common/security"
+	common_services "github.com/JohnSalazar/microservices-go-common/services"
 
 	httpresponsecredentials "authentication/src/http"
 

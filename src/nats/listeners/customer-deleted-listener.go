@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
+	trace "github.com/JohnSalazar/microservices-go-common/trace/otel"
 	"github.com/nats-io/nats.go"
-	trace "github.com/oceano-dev/microservices-go-common/trace/otel"
 )
 
 type CustomerDeletedListener struct {

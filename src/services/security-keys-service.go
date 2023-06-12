@@ -6,7 +6,7 @@ import (
 	"authentication/src/models"
 	repository "authentication/src/repositories/interfaces"
 
-	"github.com/oceano-dev/microservices-go-common/config"
+	"github.com/JohnSalazar/microservices-go-common/config"
 )
 
 type SecurityKeysService struct {
