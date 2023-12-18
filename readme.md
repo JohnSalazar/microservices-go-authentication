@@ -90,6 +90,14 @@
 
 ---
 
+## How to build this project
+
+### Access the Infra repository and follow the instructions
+
+- [Infra](https://github.com/JohnSalazar/microservices-go-infra)
+
+---
+
 ## About
 
 Authentication service was developed by [oceano.dev](https://oceano.dev/) <img alt="Brasil" src="https://github.com/JohnSalazar/microservices-go-authentication/assets/16736914/3ecb04fb-b2ce-4e8b-b492-99c5c5c4b317" width="20" height="14" /> team under the [MIT license](LICENSE).
